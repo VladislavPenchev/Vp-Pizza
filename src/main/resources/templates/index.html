@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <th:block th:include="~{fragments/head}"></th:block>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/index.css}">
+</head>
+<body>
+<header>
+    <th:block th:include="~{fragments/navbar}"></th:block>
+</header>
+<main>
+    <div class="jumbotron p-0 m-0">
+        <div id="carouselNavIndex" class="carousel slide" data-ride="carousel">
+            <ol class="carousel-indicators">
+                <li data-target="#carouselNavIndex" data-slide-to="0" class="active"></li>
+                <li data-target="#carouselNavIndex" data-slide-to="1"></li>
+            </ol>
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img class="d-block w-100" th:src="@{/images/1-bg-banner.jpg}"
+                         onerror="this.src='/images/empty-banner-logo.jpg'" alt="First slide">
+                </div>
+                <div class="carousel-item">
+                    <img class="d-block w-100" th:src="@{/images/2-bg-banner.jpg}"
+                         onerror="this.src='/images/empty-banner-logo.jpg'" alt="Second slide">
+                </div>
+            </div>
+            <a class="carousel-control-prev" href="#carouselNavIndex" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#carouselNavIndex" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+            </a>
+        </div>
+    </div>
+    <div class="jumbotron m-0">
+        <section class="details-card">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-3">
+                        <div class="card-content">
+                            <div class="card-img">
+                                <img th:src="@{/images/card-pic-1.png}"
+                                     onerror="this.src='/images/empty-banner-logo.jpg'" alt="pizza-offert-view">
+                            </div>
+                            <div class="card-desc text-center">
+                                <h3>1 Large+ starter +2x Zagorka can for 17,50 BGN!</h3>
+                                <hr>
+                                <p>
+                                    Get your favorite large pizza + a choice of chicken starter + 2x Zagorka Special
+                                    330ml only for 17,50 BGN!
+                                    *+2,25 BGN extra for Philadelphia crust
+                                </p>
+                                <a href="#" class="btn-card text-uppercase">get this deal</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+    <div class="jumbotron pb-5 pt-0 m-0">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 ">
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <div class="text-center additional-block pizza-tracker">
+                                <h4>PIZZA TRACKER</h4>
+                                <p>Track your order using our unique real-time Pizza Tracker!</p>
+                                <a th:href="@{#}" class="btn btn-custom">TRACK YOUR ORDER NOW!</a>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="text-center additional-block careers">
+                                <h4 class="color-warning">Careers</h4>
+                                <p class="">Please fill the application form</p>
+                                <a th:href="@{#}" class="btn btn-custom">JOB APPLICATION</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <div class="text-center additional-block skype-call">
+                                <h4 class="color-warning">ORDER VIA SKYPE</h4>
+                                <p class="">Place your order now by calling us on Skype!</p>
+                                <a th:href="@{#}" class="btn btn-custom">Call</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="text-center additional-block phone-app">
+                        <h4 class="color-warning">DOMINO'S PIZZA APP</h4>
+                        <p class="">Order online using our FREE Domino’s app. Download now here!</p>
+                        <img th:src="@{/images/index/phone-index.png}" width="200px" height="233px" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+<footer class="footer">
+    <th:block th:include="~{fragments/footer}"></th:block>
+</footer>
+<script th:src="@{/js/index.js}"></script>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<th:block>
+    <nav class="navbar navbar-expand-lg navbar-dark font-weight-bold pb-md-3">
+        <a class="navbar-brand p-0 m-0" th:href="@{/}">
+            <img th:src="@{/images/logo.png}" width="200" height="50" alt="">
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#guestNav"
+                aria-controls="guestNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-end" id="guestNav">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-xs-6">
+                                <img th:src="@{/images/index/phone-call.svg}" width="30px" height="30px" alt="Call us">
+                            </div>
+                            <div class="col-xs-6">
+                                <a class="nav-link" th:href="@{tel:070011111}">070011111</a>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" th:href="@{/menu}">Menu</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" th:href="@{/login}">Login</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" th:href="@{/register}">Register</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+</th:block>
