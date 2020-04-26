@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head>
+    <th:block th:include="~{fragments/head}"></th:block>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/index.css}">
+</head>
+<body>
+<header>
+    <th:block th:include="~{fragments/navbar}"></th:block>
+</header>
+<main>
+    <div class="jumbotron m-0">
+        <div class="container">
+<!--            <form th:action="@{/{username}(username=${model.username})}" th:method="post" th:object="model">-->
+            <form th:action="@{/{username}(username=${#authentication.getName()})}" th:method="post">
+                <div class="row">
+                    <div class="col-md-6">
+                        <label for="firstName" class="label">NAME*</label>
+                        <input id="firstName" type="text" name="firstName" th:value="${model.firstName}">
+                    </div>
+                    <div class="col-md-6">
+                        <label for="surName" class="label">SURNAME*</label>
+                        <input id="surName" type="text" name="surName" th:value="${model.surName}">
+                    </div>
+                </div>
+                <div class="row">
+                    <label for="email" class="label">E-MAIL*</label>
+                    <input id="email" type="text" name="email" th:value="${model.email}">
+                </div>
+<!--                <div class="row">-->
+<!--                    <label for="currentPassword" class="label">CURRENT PASSWORD*</label>-->
+<!--                    <input id="currentPassword" type="text" name="currentPassword">-->
+<!--                </div>-->
+<!--                <div class="row">-->
+<!--                    <label for="newPassword" class="label">NEW PASSWORD*</label>-->
+<!--                    <input id="newPassword" type="text" name="newPassword">-->
+<!--                </div>-->
+<!--                <div class="row">-->
+<!--                    <label for="confirmPassword" class="label">CONFIRM PASSWORD*</label>-->
+<!--                    <input id="confirmPassword" type="text" name="confirmPassword">-->
+<!--                </div>-->
+                <div class="group text-center">
+                    <button type="submit" class="button">Save</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</main>
+<footer class="footer">
+    <th:block th:include="~{fragments/footer}"></th:block>
+</footer>
+<script th:src="@{/js/index.js}"></script>
+</body>
+</html>
