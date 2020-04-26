@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://thymeleaf.og/extras/spring-security">
+<head>
+    <th:block th:include="~{fragments/head}"></th:block>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/login.css}">
+</head>
+<body>
+<header>
+    <th:block th:include="~{fragments/navbar}"></th:block>
+</header>
+<main>
+    <div class="jumbotron m-0">
+        <div th:replace="fragments/messages :: messages"></div>
+        <div class="login-wrap-login">
+            <div class="login-html">
+                <input id="tab-1" type="radio" name="tab" class="sign-in" checked>
+                <label for="tab-1" class="tab">Sign In</label>
+                <input id="tab-2" type="radio" name="tab" class="for-pwd">
+                <label for="tab-2" class="tab">Forgot Password</label>
+                <div class="login-form">
+                    <div class="sign-in-htm">
+                        <form th:action="@{/login}" th:method="post">
+                            <div class="group">
+                                <label for="usernameOrEmailLoginForm" class="label">Username or Email</label>
+                                <input id="usernameOrEmailLoginForm" type="text" class="input" name="usernameOrEmail">
+                            </div>
+                            <div class="group">
+                                <label for="password" class="label">Password</label>
+                                <input id="password" type="password" class="input" name="password">
+                            </div>
+                            <div class="group text-center">
+                                <button type="submit" class="button">Sign In</button>
+                            </div>
+                            <div class="hr"></div>
+                        </form>
+                    </div>
+                    <div class="for-pwd-htm">
+                        <form th:action="@{/forgot-password}" th:method="post">
+                            <div class="group">
+                                <label for="usernameOrEmailForgotPassword" class="label">Username or Email</label>
+                                <input id="usernameOrEmailForgotPassword" type="text" class="input" name="usernameOrEmail">
+                            </div>
+                            <div class="group text-center">
+                                <button type="submit" class="button">Send</button>
+                            </div>
+                            <div class="hr"></div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+<footer class="footer">
+    <th:block th:include="~{fragments/footer}"></th:block>
+</footer>
+</body>
+</html>

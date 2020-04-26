@@ -1,0 +1,25 @@
+<th:block>
+
+
+    <div th:fragment="messages" id="errorMessage">
+        <div th:if="${errors != null}" class="alert alert-danger alert-dismissible fade show" role="alert">
+            <th:block th:each="error : ${errors}">
+                <span th:text="${error}"></span>
+                <br clear="all">
+            </th:block>
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+
+        <div th:if="${message != null && !message.isEmpty()}"
+             class="row alert success center">
+            <span class="closebtn">&times;</span>
+            <span th:text="${message}"></span>
+        </div>
+
+        <div th:if="${error != null && !error.isEmpty()}" class="row alert error center">
+            <span th:text="${error}"></span>
+        </div>
+    </div>
+</th:block>
